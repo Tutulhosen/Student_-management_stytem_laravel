@@ -13,7 +13,8 @@ class FRontendController extends Controller
      */
     public function index()
     {   $data= Student::latest()->get();
-        return view('student.student', compact('data'));
+        $type= 'add';
+        return view('student.student', compact('data','type'));
     }
     /**
      * create a student ddata

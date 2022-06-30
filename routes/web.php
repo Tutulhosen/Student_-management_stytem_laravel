@@ -23,3 +23,5 @@ Route::get('/', [FrontendController::class, 'index'])->name('student.index');
 
 //student route
 Route::post('/', [StudentController::class, 'create'])->name('student.create');
+Route::get('edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
+Route::post('edit/{id}', [StudentController::class, 'update'])->name('student.update');

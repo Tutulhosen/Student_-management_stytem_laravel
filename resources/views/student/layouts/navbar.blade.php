@@ -5,8 +5,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link " href="{{url('/create')}}">Create</a>
+            <a class="nav-item nav-link active" href="{{route('student.index')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link " href="{{route('student.create')}}">Create</a>
 
         </div>
     </div>

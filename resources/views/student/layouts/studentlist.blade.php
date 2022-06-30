@@ -27,7 +27,7 @@
                 <td>{{$student->speciality}}</td>
                 <td>
 
-                    <a href="" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{{route('student.edit', $student->id)}}" class="btn btn-sm btn-warning">Edit</a>
 
                 </td>
 
