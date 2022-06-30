@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Student\FRontendController;
+use App\Http\Controllers\Student\FrontendController;
+use App\Http\Controllers\Student\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-//fronend route
-Route::get('/', [FRontendController::class, 'index'])->name('student.index');
+//frontend route
+Route::get('/', [FrontendController::class, 'index'])->name('student.index');
+
+
+//student route
+Route::post('/', [StudentController::class, 'create'])->name('student.create');

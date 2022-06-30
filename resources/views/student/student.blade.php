@@ -25,45 +25,7 @@
         <div class="row">
             <section class="col-md-7">
                 <!-- student list  -->
-                <div class="card mb-3">
-                    <img src="https://cdn.pixabay.com/photo/2015/05/19/14/55/educational-773651_960_720.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">List of students</h5>
-                        <p class="card-text">You can find here all the informatins about students in the system</p>
-                    
-                        <table class="table">
-                            <thead class="thead-light">
-                            <tr>
-                                <th scope="col">CNE</th>
-                                <th scope="col">First name</th>
-                                <th scope="col">Second Name</th>
-                                <th scope="col">Age</th>
-                                <th scope="col">Speciality</th>
-                                <th scope="col">Operations</th>
-                    
-                            </tr>
-                            </thead>
-                            <tbody>
-                            
-                                <tr>
-                                    <td>fghfhg</td>
-                                    <td>fhgfhfg</td>
-                                    <td>fgds</td>
-                                    <td>fgthfgf</td>
-                                    <td>dfgdfgdfg</td>
-                                    <td>
-                    
-                                        <a href="" class="btn btn-sm btn-warning">Edit</a>
-                    
-                                    </td>
-                    
-                    
-                                </tr>
-                            
-                            </tbody>
-                        </table>
-                    </div>
-                 </div>
+                @include('student.layouts.studentlist')
             </section>
             <section class="col-md-5">
 
@@ -71,30 +33,31 @@
                     <img src="https://marketplace.canva.com/MAB7yqsko0c/1/screen_2x/canva-smart-little-schoolgirl--MAB7yqsko0c.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Enter the informations of the new student</h5>
-                        <form action="" method="post">
-                         
+                        @include('validate.validate')
+                        <form action="{{route('student.create')}}" method="post">
+                         @csrf
                             <div class="form-group">
-                                <label>CNE</label>
-                                <input name="cne" type="text" class="form-control"  placeholder="Enter cne">
+                                <label>CODE</label>
+                                <input name="code" type="text" class="form-control" value="{{old('code')}}"  placeholder="Enter code">
                             </div>
                             <div class="form-group">
                                 <label>First Name</label>
-                                <input name="firstName" type="text" class="form-control"  placeholder="Enter the first name">
+                                <input name="firstName" type="text" class="form-control" value="{{old('firstName')}}" placeholder="Enter the first name">
                             </div>
 
                             
                             <div class="form-group">
-                                <label>second Name</label>
-                                <input name="secondName" type="text" class="form-control"  placeholder="Enter second name">
+                                <label>Last Name</label>
+                                <input name="lastName" type="text" class="form-control" value="{{old('lastName')}}" placeholder="Enter last name">
                             </div>
                             
                             <div class="form-group">
                                 <label>Age</label>
-                                <input name="age" type="text" class="form-control"  placeholder="Enter the Age">
+                                <input name="age" type="text" class="form-control" value="{{old('age')}}" placeholder="Enter the Age">
                             </div>
                             <div class="form-group">
                                 <label>Speciality</label>
-                                <input name="speciality" type="text" class="form-control"  placeholder="Enter Sepeciality">
+                                <input name="speciality" type="text" class="form-control" value="{{old('speciality')}}" placeholder="Enter Sepeciality">
                             </div>
                             <input type="submit" class="btn btn-info" value="Save">
                             <input type="reset" class="btn btn-warning" value="Reset">

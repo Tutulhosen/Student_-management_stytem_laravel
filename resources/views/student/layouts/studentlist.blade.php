@@ -7,9 +7,9 @@
     <table class="table">
         <thead class="thead-light">
         <tr>
-            <th scope="col">CNE</th>
+            <th scope="col">CODE</th>
             <th scope="col">First name</th>
-            <th scope="col">Second Name</th>
+            <th scope="col">Last Name</th>
             <th scope="col">Age</th>
             <th scope="col">Speciality</th>
             <th scope="col">Operations</th>
@@ -18,12 +18,13 @@
         </thead>
         <tbody>
         
+            @forelse ($data as $student)
             <tr>
-                <td>fghfhg</td>
-                <td>fhgfhfg</td>
-                <td>fgds</td>
-                <td>fgthfgf</td>
-                <td>dfgdfgdfg</td>
+                <td>{{$student->code}}</td>
+                <td>{{$student->first_name}}</td>
+                <td>{{$student->last_name}}</td>
+                <td>{{$student->age}}</td>
+                <td>{{$student->speciality}}</td>
                 <td>
 
                     <a href="" class="btn btn-sm btn-warning">Edit</a>
@@ -32,6 +33,10 @@
 
 
             </tr>
+            @empty
+                
+            @endforelse
+            
         
         </tbody>
     </table>
