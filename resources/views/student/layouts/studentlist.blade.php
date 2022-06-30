@@ -28,6 +28,8 @@
                 <td>
 
                     <a href="{{route('student.edit', $student->id)}}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{{route('student.destroy', $student->id)}}" class="btn btn-sm btn-warning">Delete</a>
+                   
 
                 </td>
 
